@@ -73,7 +73,7 @@ def in_except_handler(node):
     if parent is None:
         return False
 
-    if isinstance(parent, ExceptHandler):
+    if isinstance(parent, ExceptHandler) and parent.name is not None:
         return True
 
     return in_except_handler(parent)
